@@ -27,8 +27,7 @@ class PronouncerLex(PronouncerBase):
     NOTE: English-only
     '''
     def __init__(self, lexicon):
-        with open(lexicon, 'r') as f:
-            self.lexicon = json.load(f)
+        self.lexicon = lexicon
         self.fallbackDict = pyphen.Pyphen(lang='en_US')
 
     def pronounce(self, words):

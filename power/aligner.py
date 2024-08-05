@@ -127,10 +127,7 @@ class PowerAligner:
         if not ref:
             raise Exception("No reference file.\nref: {0}\nhyp: {1}".format(ref, hyp))
 
-        if pronounce_type == PronouncerType.Lexicon:
-            self.pronouncer = PronouncerLex(lexicon)
-        else:
-            self.pronouncer = PronouncerBase()
+        self.pronouncer = PronouncerLex(lexicon)
         
         self.ref = [x for x in ref.strip().split() if x]
         self.hyp = [x for x in hyp.strip().split() if x]
